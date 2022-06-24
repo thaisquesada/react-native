@@ -1,28 +1,71 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import React from "react";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function App() {
+const Test = () => {
   return (
-    <View style={styles.container}>
-      <View style={{flexDirection: "row",justifyContent: "space-between"}}>
-        <View style={{height:100, width:100, backgroundColor: "#E6E6FA"}}/>
-        <View style={{height:100, width:100, backgroundColor: "#87CEEB"}}/>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={{ height: 300, width: 300, backgroundColor: "#7B68EE" }}>
+        <Text
+          style={{
+            color: "#fff",
+            textAlign: "center",
+            fontSize: 30,
+            fontWeight: "bold",
+            padding: 10,
+          }}
+        >
+          Login
+        </Text>
+        <View style={{ marginTop: 20 }}>
+          <View
+            style={{
+              marginTop: 10,
+              height: 50,
+              width: 270,
+              backgroundColor: "#E6E6FA",
+              alignSelf: "center",
+              borderRadius: 5,
+            }}
+          />
+          <View
+            style={{
+              marginTop: 10,
+              height: 50,
+              width: 270,
+              backgroundColor: "#E6E6FA",
+              alignSelf: "center",
+              justifyContent: "center",
+              borderRadius: 5,
+            }}
+          />
+
+          <Pressable
+          style = {styles.input}
+          >
+            <Text
+              style={{ color: "#fff", fontSize: 20, paddingBottom: 8}}
+            >
+              Login
+            </Text>
+          </Pressable>
+        </View>
       </View>
-      <View style={{height:100, width:100, backgroundColor: "#FA8072", alignSelf: "center"}}/>
-      <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-        <View style={{height:100, width:100, backgroundColor: "#B0E0E6"}}/>
-        <View style={{height:100, width:100, backgroundColor: "#FFF0F5"}}/>
-      </View>
-      <StatusBar style="auto" />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    display:'flex',
-    backgroundColor: '#fff',
-    justifyContent: 'space-between',
+  input: {
+    height: 50,
+    width: 120,
+    backgroundColor: "#FF69B4",
+    alignSelf: "center",
+    marginTop: 22,
+    borderRadius: 50,
+    fontWeight: "bold",
+    alignItems: 'center',
+    justifyContent: "center",
   },
 });
+
+export default Test;
